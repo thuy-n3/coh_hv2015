@@ -1,11 +1,11 @@
-global.PROJECT_NAME = null
+global.PROJECT_NAME = 'csvTestData'
 
 if (!global.PROJECT_NAME) { //« set by npm run init-dev »
 	throw new Error('no project name set. did you forget to run "npm run init-dev"?')
 }
 // x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x
 
-
+const fastCSV = require('fast-csv');
 
 const bodyParser = require('body-parser');
 const express = require('express');
@@ -13,6 +13,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
 const renderFile = require('ejs').renderFile
+
 
 // Load Configuration
 const appMiddleWare = require('./config/middleware.js')
